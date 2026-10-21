@@ -1,0 +1,4 @@
+# CVE-2026-106454: Twisted IMAP4 server regex DoS. SERIMS does not run an IMAP
+# server (Twisted is only daphne's web engine), so the vulnerable code is unreachable.
+# Re-check when a fixed Twisted is released.
+CVE-2026-106454
