@@ -249,6 +249,7 @@ if not DEBUG:
   # throttles see each visitor's real address instead of the proxy's.
   SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
   SECURE_SSL_REDIRECT = _env('SECURE_SSL_REDIRECT', default=True, cast=bool)
+  SECURE_REDIRECT_EXEMPT = [r'^healthz/$']
   SESSION_COOKIE_SECURE = True
   CSRF_COOKIE_SECURE = True
   # Start small: browsers remember HSTS. Raise toward 31536000 once HTTPS is proven.

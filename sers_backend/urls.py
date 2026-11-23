@@ -1,3 +1,4 @@
+from core.health import health
 import core.schema  # noqa: F401  (registers the API-docs auth scheme)
 from django.conf import settings
 from core.login import ThrottledLoginView
@@ -26,6 +27,7 @@ from rest_framework_simplejwt.views import (TokenObtainPairView, TokenRefreshVie
 from users.views import CurrentUserView
 
 urlpatterns = [
+    path('healthz/', health),
     path(settings.ADMIN_URL, admin.site.urls),
     path('api/auth/login/',	ThrottledLoginView.as_view()),
     path('api/auth/refresh/',	CheckedTokenRefreshView.as_view()),
